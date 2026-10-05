@@ -1016,6 +1016,8 @@ function initModalsAndDrawers() {
   const hamburgerBtn = document.getElementById('btn-open-drawer');
   const drawerBackdrop = document.getElementById('side-drawer');
   const closeDrawerBtn = document.getElementById('btn-close-drawer');
+  const closeDrawerXBtn = document.getElementById('btn-close-drawer-x');
+  const drawerLogoutBtn = document.getElementById('btn-drawer-logout');
 
   if (hamburgerBtn && drawerBackdrop) {
     hamburgerBtn.addEventListener('click', () => {
@@ -1026,6 +1028,20 @@ function initModalsAndDrawers() {
   if (closeDrawerBtn && drawerBackdrop) {
     closeDrawerBtn.addEventListener('click', () => {
       drawerBackdrop.classList.remove('active');
+    });
+  }
+
+  if (closeDrawerXBtn && drawerBackdrop) {
+    closeDrawerXBtn.addEventListener('click', () => {
+      drawerBackdrop.classList.remove('active');
+    });
+  }
+
+  if (drawerLogoutBtn && drawerBackdrop) {
+    drawerLogoutBtn.addEventListener('click', () => {
+      drawerBackdrop.classList.remove('active');
+      showToast('You have been logged out safely');
+      navigateTo('screen-login');
     });
   }
 
@@ -1118,6 +1134,29 @@ function renderStopsInModal() {
    FORM HANDLERS & TOASTS
    ========================================================================== */
 function initFormHandlers() {
+  // Role selector tab switching
+  const roleTabs = document.querySelectorAll('.role-tab-btn');
+  const emailInput = document.getElementById('login-email');
+  roleTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      roleTabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      const role = tab.getAttribute('data-role');
+      if (emailInput) {
+        if (role === 'student') {
+          emailInput.placeholder = 'e.g. 21CS101';
+          emailInput.value = '21CS101';
+        } else if (role === 'faculty') {
+          emailInput.placeholder = 'e.g. FAC890';
+          emailInput.value = 'FAC890';
+        } else if (role === 'driver') {
+          emailInput.placeholder = 'e.g. BUS-DRV-02';
+          emailInput.value = 'BUS-DRV-02';
+        }
+      }
+    });
+  });
+
   const togglePassBtn = document.getElementById('btn-toggle-password');
   const passInput = document.getElementById('login-password');
 
@@ -1135,7 +1174,8 @@ function initFormHandlers() {
   if (loginForm) {
     loginForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      showToast('Welcome back, Gayatri!');
+      const activeRole = document.querySelector('.role-tab-btn.active')?.getAttribute('data-role') || 'student';
+      showToast(`Welcome back! Signed in as ${activeRole.toUpperCase()}`);
       navigateTo('screen-home');
     });
   }
@@ -1144,6 +1184,14 @@ function initFormHandlers() {
   if (googleBtn) {
     googleBtn.addEventListener('click', () => {
       showToast('Signed in with Google account');
+      navigateTo('screen-home');
+    });
+  }
+
+  const guestBtn = document.getElementById('btn-login-guest');
+  if (guestBtn) {
+    guestBtn.addEventListener('click', () => {
+      showToast('Guest login successful');
       navigateTo('screen-home');
     });
   }

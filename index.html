@@ -24,63 +24,6 @@
 <body>
 
   <!-- ========================================================================
-       TOP TOOLBAR & DESKTOP SCREEN CONTROLS
-       ======================================================================== -->
-  <header class="app-header-controls">
-    <div class="controls-brand-row">
-      <div class="brand-badge">
-        <div class="logo-circle">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M8 6v6"></path>
-            <path d="M16 6v6"></path>
-            <path d="M2 12h20"></path>
-            <path d="M4 18h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2Z"></path>
-            <path d="M6 18v2"></path>
-            <path d="M18 18v2"></path>
-          </svg>
-        </div>
-        <div class="brand-text">
-          <h1>Student Bus Tracker</h1>
-          <p>Interactive Mobile Web Application • All 10 Screens</p>
-        </div>
-      </div>
-
-      <!-- View Mode Selector -->
-      <div class="view-modes-group">
-        <button class="view-mode-btn active" data-mode="simulator" title="Interactive Phone Shell">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"></rect><path d="M12 18h.01"></path></svg>
-          Phone Simulator
-        </button>
-        <button class="view-mode-btn" data-mode="gallery" title="Side-by-side view matching reference mockup">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="7" height="7" x="3" y="3" rx="1"></rect><rect width="7" height="7" x="14" y="3" rx="1"></rect><rect width="7" height="7" x="14" y="14" rx="1"></rect><rect width="7" height="7" x="3" y="14" rx="1"></rect></svg>
-          All 10 Screens Grid
-        </button>
-        <button class="view-mode-btn" data-mode="full" title="Device-frame free mobile view">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg>
-          Full Mobile View
-        </button>
-        <a href="eluru-map.html" class="view-mode-btn" style="text-decoration: none; background: rgba(37, 99, 235, 0.25); border: 1px solid #3B82F6; color: #93C5FD;" title="View Eluru Location Map">
-          🗺 Eluru City Map
-        </a>
-      </div>
-    </div>
-
-    <!-- Quick Screen Navigation Pills -->
-    <nav class="screens-nav-strip" aria-label="Jump directly to any screen">
-      <button class="screen-jump-pill active" data-target-screen="screen-welcome">1. Welcome</button>
-      <button class="screen-jump-pill" data-target-screen="screen-login">2. Login</button>
-      <button class="screen-jump-pill" data-target-screen="screen-home">3. Home</button>
-      <button class="screen-jump-pill" data-target-screen="screen-tracking">4. Live Tracking</button>
-      <button class="screen-jump-pill" data-target-screen="screen-bus-details">5. Bus Details</button>
-      <button class="screen-jump-pill" data-target-screen="screen-routes">6. Routes</button>
-      <button class="screen-jump-pill" data-target-screen="screen-trips">7. My Trips</button>
-      <button class="screen-jump-pill" data-target-screen="screen-route-details">8. Route Details</button>
-      <button class="screen-jump-pill" data-target-screen="screen-profile">9. Profile</button>
-      <button class="screen-jump-pill" data-target-screen="screen-settings">10. Settings</button>
-    </nav>
-  </header>
-
-  <!-- ========================================================================
        MOBILE VIEWPORT CONTAINER (INTERACTIVE SMARTPHONE SIMULATOR)
        ======================================================================== -->
   <main class="app-viewport-container">
@@ -162,10 +105,10 @@
                SCREEN 2: LOGIN SCREEN
                ================================================================ -->
           <section class="app-screen" id="screen-login">
-            <div>
+            <div class="login-container-inner">
               <div class="login-top-area">
-                <div class="app-icon-circle-lg" style="margin-bottom: 14px; width: 66px; height: 66px;">
-                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
+                <div class="login-logo-circle">
+                  <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M8 6v6"></path>
                     <path d="M16 6v6"></path>
                     <path d="M2 12h20"></path>
@@ -174,42 +117,63 @@
                     <path d="M18 18v2"></path>
                   </svg>
                 </div>
-                <h2 style="font-size: 1.45rem; font-weight: 700; color: #0F172A;">College Bus Tracker</h2>
-                <p style="font-size: 0.8rem; color: #64748B; margin-top: 4px;">Track • Stay Safe • Reach On Time</p>
+                <h2 class="login-title">Welcome Back</h2>
+                <p class="login-subtitle">Sign in to track your campus bus in real-time</p>
+              </div>
+
+              <!-- Role Selector Segmented Tabs -->
+              <div class="login-role-tabs">
+                <button type="button" class="role-tab-btn active" data-role="student">Student</button>
+                <button type="button" class="role-tab-btn" data-role="faculty">Faculty</button>
               </div>
 
               <!-- Login Form -->
               <form class="login-form-area" id="login-form">
-                <div class="input-field-wrapper">
-                  <span class="input-icon">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
-                      <circle cx="12" cy="7" r="4"></circle>
-                    </svg>
-                  </span>
-                  <input type="text" class="form-input" id="login-email" placeholder="Email / Roll Number" value="21CS101" required>
+                <div class="input-field-group">
+                  <label class="input-label" for="login-email">Roll Number / Email</label>
+                  <div class="input-field-wrapper">
+                    <span class="input-icon">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                      </svg>
+                    </span>
+                    <input type="text" class="form-input" id="login-email" placeholder="e.g. 21CS101" value="21CS101" required>
+                  </div>
                 </div>
 
-                <div class="input-field-wrapper">
-                  <span class="input-icon">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect>
-                      <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-                    </svg>
-                  </span>
-                  <input type="password" class="form-input" id="login-password" placeholder="Password" value="••••••••" required>
-                  <button type="button" class="password-toggle-btn" id="btn-toggle-password" aria-label="Toggle password visibility">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path>
-                      <circle cx="12" cy="12" r="3"></circle>
-                    </svg>
-                  </button>
+                <div class="input-field-group">
+                  <label class="input-label" for="login-password">Password</label>
+                  <div class="input-field-wrapper">
+                    <span class="input-icon">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect>
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                      </svg>
+                    </span>
+                    <input type="password" class="form-input" id="login-password" placeholder="Enter password" value="••••••••" required>
+                    <button type="button" class="password-toggle-btn" id="btn-toggle-password" aria-label="Toggle password visibility">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path>
+                        <circle cx="12" cy="12" r="3"></circle>
+                      </svg>
+                    </button>
+                  </div>
                 </div>
 
-                <button type="submit" class="btn-primary" style="margin-top: 4px;">Login</button>
+                <div class="form-options-row">
+                  <label class="remember-checkbox-label">
+                    <input type="checkbox" id="login-remember" checked>
+                    <span>Remember me</span>
+                  </label>
+                  <a href="#" class="forgot-password-link" id="btn-forgot-password">Forgot password?</a>
+                </div>
+
+                <button type="submit" class="btn-primary login-submit-btn">
+                  <span>Sign In</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </button>
                 
-                <a href="#" class="forgot-password-link" id="btn-forgot-password">Forgot Password?</a>
-
                 <div class="divider-or-row">
                   <div class="divider-line"></div>
                   <span>OR</span>
@@ -223,7 +187,11 @@
                     <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
                     <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
                   </svg>
-                  Continue with Google
+                  <span>Continue with Google</span>
+                </button>
+
+                <button type="button" class="btn-guest-login" id="btn-login-guest" data-navigate="screen-home">
+                  <span>⚡ Quick Guest Demo Login</span>
                 </button>
               </form>
             </div>
@@ -242,7 +210,7 @@
               <button class="header-btn" id="btn-open-drawer" aria-label="Open Navigation Menu">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>
               </button>
-              <h2 class="header-title">College Bus Tracker</h2>
+              <h2 class="header-title">Bus Tracker</h2>
               <button class="header-btn" id="btn-open-notifications" aria-label="Notifications" style="position: relative;">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg>
                 <span style="position: absolute; top: 6px; right: 6px; width: 8px; height: 8px; background: #EF4444; border-radius: 50%; border: 1.5px solid var(--primary);"></span>
@@ -1331,104 +1299,127 @@
     </div>
 
   </section>
+        </div><!-- /.screens-viewport -->
 
-  <!-- ========================================================================
-       INTERACTIVE MODALS & DRAWERS
-       ======================================================================== -->
+        <!-- ========================================================================
+             INTERACTIVE MODALS & DRAWERS (INSIDE MOBILE PHONE SCREEN)
+             ======================================================================== -->
 
-  <!-- 1. Hamburger Side Drawer -->
-  <aside class="side-drawer-backdrop" id="side-drawer">
-    <div class="side-drawer-panel">
-      <div>
-        <div class="drawer-user-info">
-          <div class="drawer-user-avatar">
-            <img src="assets/student_avatar.jpg" alt="Gayatri avatar">
+        <!-- 1. Hamburger Side Drawer (Strictly inside Mobile Phone Screen) -->
+        <aside class="side-drawer-backdrop" id="side-drawer">
+          <div class="side-drawer-panel">
+            <div class="drawer-top-content">
+              <!-- Drawer Header with User Profile -->
+              <div class="drawer-user-info">
+                <div class="drawer-user-avatar">
+                  <img src="assets/student_avatar.jpg" alt="Gayatri avatar">
+                </div>
+                <div class="drawer-user-details">
+                  <h4 class="drawer-user-name">Gayatri R.</h4>
+                  <span class="drawer-user-role">Roll: 21CS101 • Student</span>
+                </div>
+                <button type="button" class="drawer-close-x" id="btn-close-drawer-x" aria-label="Close menu">✕</button>
+              </div>
+              
+              <!-- Navigation Links -->
+              <nav class="drawer-links-group">
+                <button class="drawer-link-btn active" data-navigate="screen-home" onclick="document.getElementById('side-drawer').classList.remove('active')">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
+                  <span>Dashboard</span>
+                </button>
+                <button class="drawer-link-btn" data-navigate="screen-tracking" onclick="document.getElementById('side-drawer').classList.remove('active')">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"></polygon></svg>
+                  <span>Live Tracking</span>
+                </button>
+                <button class="drawer-link-btn" data-navigate="screen-routes" onclick="document.getElementById('side-drawer').classList.remove('active')">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path></svg>
+                  <span>Campus Routes</span>
+                </button>
+                <button class="drawer-link-btn" data-navigate="screen-trips" onclick="document.getElementById('side-drawer').classList.remove('active')">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect></svg>
+                  <span>My Trips History</span>
+                </button>
+                <button class="drawer-link-btn" data-navigate="screen-settings" onclick="document.getElementById('side-drawer').classList.remove('active')">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle></svg>
+                  <span>Preferences & Settings</span>
+                </button>
+                <a href="eluru-map.html" class="drawer-link-btn map-link" onclick="document.getElementById('side-drawer').classList.remove('active')">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"></polygon><line x1="9" y1="3" x2="9" y2="18"></line><line x1="15" y1="6" x2="15" y2="21"></line></svg>
+                  <span>Eluru City Location Map</span>
+                </a>
+              </nav>
+            </div>
+
+            <!-- Drawer Bottom Action Buttons -->
+            <div class="drawer-bottom-actions">
+              <!-- Emergency SOS Button -->
+              <button class="btn-drawer-sos" onclick="showToast('Campus Transport SOS Alert Triggered')">
+                <span>🚨 Emergency SOS</span>
+              </button>
+              
+              <!-- Logout Button -->
+              <button class="btn-drawer-logout" id="btn-drawer-logout">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                  <polyline points="16 17 21 12 16 7"></polyline>
+                  <line x1="21" y1="12" x2="9" y2="12"></line>
+                </svg>
+                <span>Logout</span>
+              </button>
+
+              <button class="btn-drawer-close" id="btn-close-drawer">Close Menu</button>
+            </div>
           </div>
-          <div>
-            <h4 style="font-size: 0.95rem; font-weight: 700;">Gayatri R.</h4>
-            <span style="font-size: 0.75rem; color: #64748B;">Roll: 21CS101</span>
+        </aside>
+
+        <!-- 2. Notifications Modal Sheet -->
+        <aside class="modal-bottom-sheet-backdrop" id="notifications-modal">
+          <div class="modal-bottom-sheet">
+            <div class="sheet-handle"></div>
+            <div class="sheet-header-row">
+              <h3>Recent Alerts</h3>
+              <button class="sheet-close-btn" id="btn-close-notifications">✕</button>
+            </div>
+            <div class="sheet-content-scroll">
+              <div style="padding: 12px; background: #EFF6FF; border-radius: 12px; border-left: 4px solid #2563EB;">
+                <b style="font-size: 0.88rem; color: #1E40AF;">Bus 2 Arriving Soon</b>
+                <p style="font-size: 0.78rem; color: #475569; margin-top: 2px;">Bus 2 is 4 minutes away from Vatluru Junction towards RCEE Campus.</p>
+                <span style="font-size: 0.7rem; color: #94A3B8;">Just now</span>
+              </div>
+              <div style="padding: 12px; background: #FEF2F2; border-radius: 12px; border-left: 4px solid #EF4444;">
+                <b style="font-size: 0.88rem; color: #991B1B;">Bus 3 Delayed</b>
+                <p style="font-size: 0.78rem; color: #475569; margin-top: 2px;">Delayed by 15 mins due to city traffic at Main Bazaar, Eluru.</p>
+                <span style="font-size: 0.7rem; color: #94A3B8;">15m ago</span>
+              </div>
+              <div style="padding: 12px; background: #F0FDF4; border-radius: 12px; border-left: 4px solid #10B981;">
+                <b style="font-size: 0.88rem; color: #166534;">Morning Trip Logged</b>
+                <p style="font-size: 0.78rem; color: #475569; margin-top: 2px;">You reached Ramachandra College of Engineering campus safely at 8:56 AM.</p>
+                <span style="font-size: 0.7rem; color: #94A3B8;">2h ago</span>
+              </div>
+            </div>
           </div>
-        </div>
-        
-        <nav class="drawer-links-group">
-          <button class="drawer-link-btn" data-navigate="screen-home" onclick="document.getElementById('side-drawer').classList.remove('active')">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
-            Dashboard
-          </button>
-          <button class="drawer-link-btn" data-navigate="screen-tracking" onclick="document.getElementById('side-drawer').classList.remove('active')">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"></polygon></svg>
-            Live Tracking
-          </button>
-          <button class="drawer-link-btn" data-navigate="screen-routes" onclick="document.getElementById('side-drawer').classList.remove('active')">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path></svg>
-            Campus Routes
-          </button>
-          <button class="drawer-link-btn" data-navigate="screen-trips" onclick="document.getElementById('side-drawer').classList.remove('active')">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect></svg>
-            My Trips History
-          </button>
-          <button class="drawer-link-btn" data-navigate="screen-settings" onclick="document.getElementById('side-drawer').classList.remove('active')">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle></svg>
-            Preferences & Settings
-          </button>
-          <a href="eluru-map.html" class="drawer-link-btn" style="text-decoration: none; color: #2563EB;">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"></polygon><line x1="9" y1="3" x2="9" y2="18"></line><line x1="15" y1="6" x2="15" y2="21"></line></svg>
-            Eluru City Location Map
-          </a>
-        </nav>
-      </div>
+        </aside>
 
-      <div>
-        <!-- Emergency SOS Button -->
-        <button class="btn-primary" style="background: #EF4444; margin-bottom: 12px;" onclick="showToast('Campus Transport SOS Alert Triggered')">
-          🚨 Emergency SOS
-        </button>
-        <button class="btn-secondary" id="btn-close-drawer">Close Menu</button>
-      </div>
-    </div>
-  </aside>
+        <!-- 3. Stops List Modal Sheet (for Screen 8 Route Details) -->
+        <aside class="modal-bottom-sheet-backdrop" id="stops-sheet-modal">
+          <div class="modal-bottom-sheet">
+            <div class="sheet-handle"></div>
+            <div class="sheet-header-row">
+              <h3>Bus 2 Stops List</h3>
+              <button class="sheet-close-btn" id="btn-close-stops-sheet">✕</button>
+            </div>
+            <div class="sheet-content-scroll" id="stops-list-modal-body">
+              <!-- Rendered via JavaScript -->
+            </div>
+          </div>
+        </aside>
 
-  <!-- 2. Notifications Modal Sheet -->
-  <aside class="modal-bottom-sheet-backdrop" id="notifications-modal">
-    <div class="modal-bottom-sheet">
-      <div class="sheet-handle"></div>
-      <div class="sheet-header-row">
-        <h3>Recent Alerts</h3>
-        <button class="sheet-close-btn" id="btn-close-notifications">✕</button>
-      </div>
-      <div class="sheet-content-scroll">
-        <div style="padding: 12px; background: #EFF6FF; border-radius: 12px; border-left: 4px solid #2563EB;">
-          <b style="font-size: 0.88rem; color: #1E40AF;">Bus 2 Arriving Soon</b>
-          <p style="font-size: 0.78rem; color: #475569; margin-top: 2px;">Bus 2 is 4 minutes away from Vatluru Junction towards RCEE Campus.</p>
-          <span style="font-size: 0.7rem; color: #94A3B8;">Just now</span>
-        </div>
-        <div style="padding: 12px; background: #FEF2F2; border-radius: 12px; border-left: 4px solid #EF4444;">
-          <b style="font-size: 0.88rem; color: #991B1B;">Bus 3 Delayed</b>
-          <p style="font-size: 0.78rem; color: #475569; margin-top: 2px;">Delayed by 15 mins due to city traffic at Main Bazaar, Eluru.</p>
-          <span style="font-size: 0.7rem; color: #94A3B8;">15m ago</span>
-        </div>
-        <div style="padding: 12px; background: #F0FDF4; border-radius: 12px; border-left: 4px solid #10B981;">
-          <b style="font-size: 0.88rem; color: #166534;">Morning Trip Logged</b>
-          <p style="font-size: 0.78rem; color: #475569; margin-top: 2px;">You reached Ramachandra College of Engineering campus safely at 8:56 AM.</p>
-          <span style="font-size: 0.7rem; color: #94A3B8;">2h ago</span>
-        </div>
-      </div>
-    </div>
-  </aside>
+        <!-- iPhone Home Indicator -->
+        <div class="device-home-indicator"></div>
 
-  <!-- 3. Stops List Modal Sheet (for Screen 8 Route Details) -->
-  <aside class="modal-bottom-sheet-backdrop" id="stops-sheet-modal">
-    <div class="modal-bottom-sheet">
-      <div class="sheet-handle"></div>
-      <div class="sheet-header-row">
-        <h3>Bus 2 Stops List</h3>
-        <button class="sheet-close-btn" id="btn-close-stops-sheet">✕</button>
-      </div>
-      <div class="sheet-content-scroll" id="stops-list-modal-body">
-        <!-- Rendered via JavaScript -->
-      </div>
-    </div>
-  </aside>
+      </div><!-- /.device-screen-inner -->
+    </div><!-- /.mobile-device-frame -->
+  </main><!-- /.app-viewport-container -->
 
   <!-- Leaflet JS Library -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
